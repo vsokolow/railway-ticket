@@ -30,7 +30,7 @@ export default function SuccessPage() {
 
   const qrValue = JSON.stringify({
     pnr,
-    train: `${train.number} ${train.name}`,
+    train: `${train.id} ${train.name}`,
     from,
     to,
     date,
@@ -39,7 +39,8 @@ export default function SuccessPage() {
     total: bill.total,
   })
 
-  const prettyDate = date ? new Date(date).toLocaleDateString('ru-RU') : '—'
+  // если дату не выбирали в форме — берём дату отправления из карточки поезда
+  const prettyDate = date ? new Date(date).toLocaleDateString('ru-RU') : train.departure.date
 
   const handleBookAnother = () => {
     dispatch(resetBooking())
@@ -59,21 +60,21 @@ export default function SuccessPage() {
           <div className={styles.main}>
             <div className={styles.route}>
               <div>
-                <p className={styles.station}>{from || train.from.name}</p>
-                <p className={styles.time}>{train.from.time}</p>
-                <p className={styles.code}>{train.from.code}</p>
+                <p className={styles.station}>{from || train.departure.station}</p>
+                <p className={styles.time}>{train.departure.time}</p>
+                <p className={styles.code}>{train.departure.code}</p>
               </div>
               <div className={styles.middle}>
                 <span className={styles.duration}>{train.duration}</span>
                 <span className={styles.dash} />
                 <span className={styles.trainNumber}>
-                  {train.number} · {train.name}
+                  {train.id} · {train.name}
                 </span>
               </div>
               <div className={styles.right}>
-                <p className={styles.station}>{to || train.to.name}</p>
-                <p className={styles.time}>{train.to.time}</p>
-                <p className={styles.code}>{train.to.code}</p>
+                <p className={styles.station}>{to || train.arrival.station}</p>
+                <p className={styles.time}>{train.arrival.time}</p>
+                <p className={styles.code}>{train.arrival.code}</p>
               </div>
             </div>
 

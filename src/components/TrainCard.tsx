@@ -1,5 +1,5 @@
-import ClassCard from './ClassCard'
-import type { Train } from '../types/train'
+import ClassCardsContainer from './ClassCardsContainer'
+import type { Train } from '../types/trainsTypes'
 import styles from './TrainCard.module.css'
 
 interface Props {
@@ -12,26 +12,25 @@ export default function TrainCard({ train }: Props) {
       <header className={styles.head}>
         <div>
           <h3 className={styles.name}>
-            <span className={styles.number}>{train.number}</span> {train.name}
+            <span className={styles.number}>{train.id}</span> {train.name}
           </h3>
           <p className={styles.route}>
-            {train.from.name} ({train.from.code}) → {train.to.name} ({train.to.code})
+            {train.departure.station} ({train.departure.code}) → {train.arrival.station} (
+            {train.arrival.code})
           </p>
         </div>
         <span className={styles.duration}>{train.duration}</span>
       </header>
 
       <div className={styles.times}>
-        <span>{train.from.time}</span>
+        <span>{train.departure.time}</span>
         <span className={styles.line} />
-        <span>{train.to.time}</span>
+        <span>{train.arrival.time}</span>
       </div>
 
-      <div className={styles.classes}>
-        {train.classes.map((trainClass) => (
-          <ClassCard key={trainClass.type} train={train} trainClass={trainClass} />
-        ))}
-      </div>
+      <p className={styles.runsOn}>Runs on: {train.runsOn}</p>
+
+      <ClassCardsContainer train={train} classes={train.classes} />
     </article>
   )
 }

@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { Train, TrainClass } from '../../types/train'
+import type { Train, TrainClass } from '../../types/trainsTypes'
 import type { BookingState, Meal, Passenger } from '../../types/booking'
 
 const emptyPassenger = (id: number): Passenger => ({

@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../store/hooks'
 import { selectTrain } from '../store/slices/booking'
-import type { Train, TrainClass } from '../types/train'
+import type { Train, TrainClass } from '../types/trainsTypes'
 import styles from './ClassCard.module.css'
 
-interface Props {
+// Пропсы — это поля TrainClass (приходят спредом из контейнера, как в классе) плюс поезд
+interface Props extends TrainClass {
   train: Train
-  trainClass: TrainClass
 }
 
 const typeClass: Record<TrainClass['type'], string> = {
@@ -15,7 +15,7 @@ const typeClass: Record<TrainClass['type'], string> = {
   '1A': styles.t1,
 }
 
-export default function ClassCard({ train, trainClass }: Props) {
+export default function ClassCard({ train, ...trainClass }: Props) {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -31,12 +31,12 @@ export default function ClassCard({ train, trainClass }: Props) {
       onClick={handleSelect}
     >
       <span className={styles.class}>{trainClass.type}</span>
-      <span className={trainClass.status === 'AVL' ? styles.avl : styles.wl}>
-        {trainClass.status === 'AVL'
-          ? `Avl - ${String(trainClass.seats).padStart(3, '0')}`
-          : `WL - ${trainClass.seats}`}
+      <span className={trainClass.status === 'available' ? styles.avl : styles.wl}>
+        {trainClass.status === 'available'
+          ? `Avl - ${String(trainClass.availability).padStart(3, '0')}`
+          : `WL - ${trainClass.availability}`}
       </span>
-      {trainClass.tatkal && <span className={styles.tatkal}>Tatkal</span>}
+      {trainClass.fareType && <span className={styles.tatkal}>{trainClass.fareType}</span>}
       <span className={styles.price}>₹{trainClass.price}</span>
     </button>
   )

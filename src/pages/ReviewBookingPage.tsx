@@ -49,7 +49,7 @@ export default function ReviewBookingPage() {
       <div className="container">
         <h1 className="pageTitle">Review your booking</h1>
         <p className="pageSubtitle">
-          {from || 'Any station'} → {to || 'Any station'} · {prettyDate} · {train.number}{' '}
+          {from || 'Any station'} → {to || 'Any station'} · {prettyDate} · {train.id}{' '}
           {train.name} · класс {trainClass.type}
         </p>
 

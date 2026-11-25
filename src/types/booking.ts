@@ -1,4 +1,4 @@
-import type { Train, TrainClass } from './train'
+import type { Train, TrainClass } from './trainsTypes'
 
 export interface Passenger {
   id: number

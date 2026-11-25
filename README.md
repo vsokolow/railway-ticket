@@ -40,7 +40,7 @@ npm run build      # проверка типов + прод-сборка (про
 ```
 src/
 ├── types/
-│   ├── train.ts            Train, TrainClass, TrainStop
+│   ├── trainsTypes.ts      Train, TrainClass — один в один как в классе
 │   └── booking.ts          Passenger, Meal, Promo, BookingState + константы
 ├── store/
 │   ├── store.ts            configureStore, ключи TrainsSearchResults и Booking
@@ -48,14 +48,15 @@ src/
 │   ├── selectors.ts        selectBill — весь подсчёт суммы в одном месте
 │   ├── data/
 │   │   ├── stations.ts     199 станций из ТЗ
-│   │   ├── trains.ts       три поезда-заглушки
+│   │   ├── trainsSearchResults.ts  три поезда из класса (22426, 22412, 12572)
 │   │   └── offers.ts       еда и промокоды
 │   └── slices/
-│       ├── searchResults.ts
+│       ├── trainsSearchResults.ts
 │       └── booking.ts      setSearch, selectTrain, passengers, meal, baggage, promo
 ├── pages/                  Home, SearchResults, ReviewBooking, Payment, Success, NotFound
-├── components/             Header, Footer, TicketSearchForm, TrainCard, TrainCardContainer,
-│                           ClassCard, PassengerForm, BillDetails, OffersList, MealBlock, BaggageBlock
+├── components/             Header, Footer, TicketSearchForm, TrainCard, TrainCardsContainer,
+│                           ClassCard, ClassCardsContainer, PassengerForm, BillDetails,
+│                           OffersList, MealBlock, BaggageBlock
 ├── App.tsx                 роуты, lazy + Suspense, скролл наверх
 └── main.tsx                Provider + BrowserRouter
 ```
@@ -83,6 +84,12 @@ src/
 - [ ] Продвинутый вариант из ТЗ: список станций из API + RTK Query (`createApi`, `fetchBaseQuery`).
 - [ ] Свои версии главной и `/search-results` — если на консультациях ты писал их сам, замени здешние
       на свои, чтобы код был твой.
+
+## Материалы по проекту
+
+ТЗ, консультации и код, который ментор кидала в Telegram, разобраны в `../summary_react/05_телеграм_материалы.md`.
+API станций для продвинутого варианта из ТЗ (8990 станций) скачан в `../_telegram/stations_api.json`:
+`https://raw.githubusercontent.com/prasenjit-27/Indian-Railway-Data/main/stations.json`.
 
 ## Что нужно уметь объяснить
 

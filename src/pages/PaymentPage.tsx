@@ -60,7 +60,7 @@ export default function PaymentPage() {
                 <div>
                   <dt>Train</dt>
                   <dd>
-                    {train.number} {train.name}
+                    {train.id} {train.name}
                   </dd>
                 </div>
                 <div>
