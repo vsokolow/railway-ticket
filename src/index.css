@@ -1,0 +1,148 @@
+:root {
+  --navy: #0e1b2c;
+  --navy-soft: #16283f;
+  --accent: #ff7a1a;
+  --accent-soft: #ffa45c;
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #14202e;
+  --muted: #6b7a8c;
+  --border: #e2e7ee;
+  --green: #1f9d55;
+  --red: #d64545;
+  --peach: #f3b27a;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page {
+  padding: 32px 0 64px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.pageSubtitle {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  background: #f06b0b;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.btnGhost:hover {
+  background: #f1f4f8;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  color: var(--muted);
+}

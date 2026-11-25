@@ -1,0 +1,63 @@
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.number {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.route {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.duration {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f4f8;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.times {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--border) 0 6px, transparent 6px 12px);
+}
+
+.classes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

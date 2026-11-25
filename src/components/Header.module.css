@@ -1,0 +1,60 @@
+.header {
+  position: relative;
+  z-index: 10;
+}
+
+.dark {
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.light {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.mark {
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  font-size: 15px;
+}
+
+.nav a {
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
+}
+
+.nav a:hover {
+  opacity: 1;
+}

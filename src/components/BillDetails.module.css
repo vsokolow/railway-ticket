@@ -1,0 +1,54 @@
+.bill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.rows li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.value {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.discount {
+  color: var(--green);
+}
+
+.discount span:last-child {
+  font-variant-numeric: tabular-nums;
+}
+
+.total {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 700;
+}
+
+.totalValue {
+  font-size: 22px;
+  font-variant-numeric: tabular-nums;
+}

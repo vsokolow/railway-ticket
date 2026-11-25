@@ -1,0 +1,72 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+  min-width: 132px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  text-align: left;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 32, 46, 0.12);
+}
+
+.t3 {
+  background: #eefaf2;
+  border-color: #c8ecd5;
+}
+
+.t2 {
+  background: #fdf3ea;
+  border-color: #f6ddc4;
+}
+
+.t1 {
+  background: #fff1e6;
+  border-color: #ffd9bd;
+}
+
+.class {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.avl {
+  font-size: 13px;
+  color: var(--green);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.wl {
+  font-size: 13px;
+  color: var(--red);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.tatkal {
+  justify-self: start;
+  margin-top: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(255, 122, 26, 0.14);
+  color: #b9580f;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.price {
+  margin-top: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}

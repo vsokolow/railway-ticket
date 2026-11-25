@@ -1,0 +1,204 @@
+.head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(31, 157, 85, 0.12);
+  color: var(--green);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.ticket {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(240px, 1fr);
+  gap: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 26px 28px;
+  border-right: 1px dashed var(--border);
+}
+
+.route {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.station {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.time {
+  font-size: 15px;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-top: 2px;
+}
+
+.code {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-top: 6px;
+  text-align: center;
+}
+
+.duration {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.dash {
+  width: 90px;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--border) 0 5px, transparent 5px 10px);
+}
+
+.trainNumber {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.right {
+  text-align: right;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.meta div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.metaValue {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.passengers {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.passengers li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.seat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #f1f4f8;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.side {
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #fcfdfe;
+}
+
+.qr {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.pnr {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.side button {
+  width: 100%;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+  .ticket {
+    grid-template-columns: 1fr;
+  }
+
+  .main {
+    border-right: none;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .head {
+    display: none;
+  }
+
+  .ticket {
+    border: 1px solid #ddd;
+  }
+}
